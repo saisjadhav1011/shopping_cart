@@ -27,4 +27,8 @@ export class UsersService {
         await this.userRepository.delete(id);
         return { message: 'User deleted successfully' };
     }
+
+    async findByEmail(email: string) {
+        return this.userRepository.findOneBy({ email });
+    }
 }
